@@ -1,0 +1,12 @@
+title: "Entreprenör Verification Tool"
+description: "Verify a Swedish contractor — F-skatt, registration, ID06, insurance"
+theme: jekyll-theme-cayman
+plugins:
+  - jekyll-sitemap
+  - jekyll-seo-tag
+url: "https://zaragoza-ab.github.io"
+baseurl: "/entreprenor-verification-tool"
+author:
+  name: "Zaragoza AB"
+  email: "info@zaragoza.se"
+  url: "https://zaragoza.se"
