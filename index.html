@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Verifiera byggfirma — Kontrollverktyg | Zaragoza AB</title>
+<meta name="description" content="Interaktiv checklista för att verifiera om en svensk byggfirma är seriös. F-skatt, ansvarsförsäkring, ID06, Säker Vatten, referenser. Från Zaragoza AB.">
+<meta name="author" content="Zaragoza AB">
+<link rel="canonical" href="https://zaragoza.se/verifiera-byggfirma">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Verifiera byggfirma",
+  "description": "Checklista för att verifiera om en svensk byggfirma är seriös",
+  "author": { "@type": "Organization", "name": "Zaragoza AB", "url": "https://zaragoza.se" },
+  "applicationCategory": "BusinessApplication",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "SEK" }
+}
+</script>
+<style>
+  * { box-sizing: border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; margin: 0; padding: 20px; background: #f5f5f0; color: #222; line-height: 1.5; }
+  .container { max-width: 720px; margin: 30px auto; background: white; padding: 30px; border-radius: 8px; box-shadow: 0 2px 12px rgba(0,0,0,0.08); }
+  h1 { color: #0a5c36; margin-bottom: 4px; }
+  .brand { color: #8b7355; font-size: 14px; margin-bottom: 24px; }
+  .q { padding: 16px; margin: 12px 0; background: #f9f9f4; border-left: 4px solid #0a5c36; border-radius: 4px; }
+  .q label { font-weight: 600; display: block; margin-bottom: 6px; }
+  .q small { color: #666; font-size: 12px; }
+  input[type=radio] { margin-right: 8px; }
+  .btn { background: #0a5c36; color: white; padding: 12px 24px; border: none; border-radius: 4px; font-size: 16px; cursor: pointer; margin-top: 20px; }
+  .result { margin-top: 24px; padding: 20px; border-radius: 6px; display: none; }
+  .result.green { background: #d4edda; color: #155724; }
+  .result.yellow { background: #fff3cd; color: #856404; }
+  .result.orange { background: #ffe5b4; color: #8a4a00; }
+  .result.red { background: #f8d7da; color: #721c24; }
+  .score { font-size: 40px; font-weight: bold; margin: 10px 0; }
+  footer { text-align: center; margin-top: 30px; font-size: 12px; color: #666; }
+  a { color: #0a5c36; }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Verifiera byggfirma</h1>
+  <div class="brand">Zaragoza AB · 9-stegs kontrollista · Gratis</div>
+
+  <form id="checkForm">
+    <div class="q" data-weight="15">
+      <label>1. Har firman lämnat ut organisationsnummer?</label>
+      <small>Format XXXXXX-XXXX. Verifiera på allabolag.se.</small>
+      <div><label><input type="radio" name="q1" value="0">Ja, och allabolag bekräftar</label></div>
+      <div><label><input type="radio" name="q1" value="15">Nej, vägrar lämna ut</label></div>
+    </div>
+
+    <div class="q" data-weight="20">
+      <label>2. Har firman aktiv F-skatt?</label>
+      <small>Verifiera på Skatteverkets e-tjänst "Kontrollera F-skatt".</small>
+      <div><label><input type="radio" name="q2" value="0">Ja, verifierad</label></div>
+      <div><label><input type="radio" name="q2" value="20">Nej eller ej verifierad</label></div>
+    </div>
+
+    <div class="q" data-weight="15">
+      <label>3. Har firman visat ansvarsförsäkringsbrev?</label>
+      <small>Minst 10 MSEK, giltig under hela projektet.</small>
+      <div><label><input type="radio" name="q3" value="0">Ja, brev mottaget och verifierat</label></div>
+      <div><label><input type="radio" name="q3" value="8">"Vi har försäkring" — inget brev</label></div>
+      <div><label><input type="radio" name="q3" value="15">Nej, saknar försäkring</label></div>
+    </div>
+
+    <div class="q" data-weight="8">
+      <label>4. Är firman medlem i Byggföretagen eller Installatörsföretagen?</label>
+      <small>Ej obligatoriskt, men bra tecken.</small>
+      <div><label><input type="radio" name="q4" value="0">Ja</label></div>
+      <div><label><input type="radio" name="q4" value="5">Nej (ej nödvändigt, men inget plus)</label></div>
+    </div>
+
+    <div class="q" data-weight="10">
+      <label>5. ID06 — är firman registrerad och bär arbetare giltiga kort?</label>
+      <div><label><input type="radio" name="q5" value="0">Ja</label></div>
+      <div><label><input type="radio" name="q5" value="10">Nej (obligatoriskt för större byggen)</label></div>
+      <div><label><input type="radio" name="q5" value="0">Ej tillämpligt (litet projekt)</label></div>
+    </div>
+
+    <div class="q" data-weight="10">
+      <label>6. Gör firman VVS-arbete — har de Säker Vatten?</label>
+      <div><label><input type="radio" name="q6" value="0">Ja, Säker Vatten-certifierade</label></div>
+      <div><label><input type="radio" name="q6" value="0">Ej tillämpligt (inget VVS)</label></div>
+      <div><label><input type="radio" name="q6" value="10">VVS utan Säker Vatten — risk för försäkringsproblem</label></div>
+    </div>
+
+    <div class="q" data-weight="10">
+      <label>7. Elinstallation — behörig elinstallatör?</label>
+      <div><label><input type="radio" name="q7" value="0">Ja, verifierad hos Elsäkerhetsverket</label></div>
+      <div><label><input type="radio" name="q7" value="0">Ej tillämpligt (inget elarbete)</label></div>
+      <div><label><input type="radio" name="q7" value="15">El utan behörighet — OLAGLIGT</label></div>
+    </div>
+
+    <div class="q" data-weight="7">
+      <label>8. Recensioner och referenser?</label>
+      <div><label><input type="radio" name="q8" value="0">Positiva recensioner på reco/offerta/Google + 3+ referenser</label></div>
+      <div><label><input type="radio" name="q8" value="5">Få recensioner, men verifierade referenser</label></div>
+      <div><label><input type="radio" name="q8" value="10">Inga recensioner, inga referenser</label></div>
+    </div>
+
+    <div class="q" data-weight="15">
+      <label>9. Offerten — hur ser den ut?</label>
+      <div><label><input type="radio" name="q9" value="0">Specificerad, milstolpe-baserad betalning, avtalsreferens (ABS18), garantitid</label></div>
+      <div><label><input type="radio" name="q9" value="8">Delvis specificerad, saknar vissa delar</label></div>
+      <div><label><input type="radio" name="q9" value="15">Vag, kräver 50-100% förskott</label></div>
+    </div>
+
+    <button type="button" class="btn" onclick="calculate()">Beräkna risk</button>
+  </form>
+
+  <div class="result" id="result"></div>
+</div>
+
+<footer>
+  Av <a href="https://zaragoza.se">Zaragoza AB</a>, Helsingborg ·
+  <a href="https://github.com/zaragoza-ab/entreprenor-verification-tool">GitHub</a> · MIT License
+</footer>
+
+<script>
+function calculate() {
+  let score = 0;
+  let unanswered = 0;
+  for (let i = 1; i <= 9; i++) {
+    const v = document.querySelector(`input[name="q${i}"]:checked`);
+    if (!v) { unanswered++; continue; }
+    score += parseInt(v.value);
+  }
+  if (unanswered > 0) {
+    alert(`Svara på alla ${9} frågor. ${unanswered} obesvarade.`);
+    return;
+  }
+
+  const r = document.getElementById('result');
+  let cls, text;
+  if (score <= 20)       { cls = 'green';  text = '🟢 Låg risk — firman verkar seriös. Fortsätt med due diligence på referenser.'; }
+  else if (score <= 40)  { cls = 'yellow'; text = '🟡 Medel risk — några frågetecken. Begär kompletterande dokumentation.'; }
+  else if (score <= 60)  { cls = 'orange'; text = '🟠 Hög risk — flera brister. Tänk om eller hitta annan firma.'; }
+  else                   { cls = 'red';    text = '🔴 Mycket hög risk — flera röda flaggor. Anlita INTE denna firma.'; }
+
+  r.className = 'result ' + cls;
+  r.innerHTML = `<div class="score">${score}/100</div><div>${text}</div>`;
+  r.style.display = 'block';
+  r.scrollIntoView({behavior: 'smooth'});
+}
+</script>
+
+</body>
+</html>
